@@ -1,0 +1,17 @@
+.comic{
+
+  width: 280px;
+  height: 370px;
+  top: 15px;
+  left: 10px;
+}
+
+/* .btns
+{
+
+} */
+
+.modalComic
+{
+  position: relative;
+}

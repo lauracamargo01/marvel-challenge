@@ -1,0 +1,74 @@
+<div *ngIf="isComic==0">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card comic">
+        <img class="card-img-top" src="{{character.thumbnail}}" alt="Card image cap">
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="row">
+        <div class="tituloModal">
+          <h1 class="card-title">{{character.name}}</h1>
+
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <p class="card-text">{{character.description}}</p>
+          <h2 class="card-title">Related comics</h2>
+          <div class="row">
+            <div class="col-md-6"
+              *ngFor="let i = index;let item of character.comics | paginate: {itemsPerPage:10, currentPage: pageActual}">
+              <p>{{item.title}}</p>
+            </div>
+            <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isComic==1" class="modalComic">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card comic">
+        <img class="card-img-top" src="{{comic.thumbnail}}" alt="Card image cap">
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="row">
+        <div class="tituloModal">
+          <h1>{{comic.title}}</h1>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore odit maxime saepe fuga maiores cupiditate
+            adipisci placeat incidunt magnam dolores consequatur aspernatur suscipit recusandae at, quidem atque
+            voluptatum commodi. Ea.</h3>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6" *ngIf="!changeB">
+      <button type="button" class="btn btn-light btn-lg btn-block btns" (click)="addToFavourites(comic)">
+        <img  src="../../../assets/btn-favourites-default.png">
+          ADD TO FAVOURITES
+      </button>
+    </div>
+    <div class="col-md-6" *ngIf="changeB">
+      <button type="button" class="btn btn-dark btn-lg btn-block btns" (click)="addToFavourites(comic)">
+        <img  src="../../../assets/btn-favourites-primary.png">
+          ADDED TO FAVOURITES
+      </button>
+    </div>
+    <div class="col-md-6">
+      <button type="button" class="btn btn-secondary btn-lg btn-block btns">
+        <img src="../../../assets/shopping-cart-primary.png">
+        BUY FOR $3.99
+      </button>
+    </div>
+  </div>
+</div>

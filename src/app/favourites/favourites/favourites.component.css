@@ -1,0 +1,16 @@
+.comics
+{
+  width: 200px;
+  position: absolute;
+  right: 125px;
+}
+
+.trash
+{
+ border-radius: 100%;
+}
+
+/* .controls
+{
+  bottom: ;
+} */

@@ -1,0 +1,19 @@
+<div class="col-md-1"></div>
+<div class="col-md-8 controls">
+  <img src="../../../assets/favourites.png">My favourites
+</div>
+<div class="row comics" >
+  <div class="card" *ngFor="let comic of comicsList | paginate: {id: 'second', itemsPerPage:5, currentPage: pageActual, totalItems: totalItems}" >
+    <!-- <i class="fa fa-trash" aria-hidden="true"></i> -->
+
+    <img class="card-img-top" src="{{comic.thumbnail}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{comic.title}}</h5>
+      <button type="button" class="btn btn-dark trash" (click)="deleteComic(comic)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+    </div>
+  </div>
+  <div class="controls">
+    <pagination-controls (pageChange)="pageActual = $event" id="second"></pagination-controls>
+  </div>
+
+</div>

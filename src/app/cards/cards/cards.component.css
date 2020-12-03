@@ -1,0 +1,8 @@
+.card-img-top-rounded{
+  border-radius: 100px;
+  width: 200px ;
+  height: 200px;
+}
+.cards{
+  margin: 2%;
+}

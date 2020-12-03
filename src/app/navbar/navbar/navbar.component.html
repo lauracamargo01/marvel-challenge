@@ -1,0 +1,14 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a href="#"><img src="../assets/logo.png" width="180" height="90"></a>
+  <div class="col-md-2"></div>
+  <div class="col-md-5">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search character..." aria-label="Recipient's username"
+        aria-describedby="button-addon2" [(ngModel)]="value">
+    </div>
+  </div>
+  <button class="btn-light" type="button" id="button-addon2"><img src="../assets/search.png" width="18" height="20"
+    (click)="sendFilterValue()"></button>
+</nav>
+<br>
